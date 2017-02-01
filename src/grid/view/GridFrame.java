@@ -26,4 +26,9 @@ public class GridFrame extends JFrame
 		this.setResizable(false);
 		this.setVisible(true);	
 	}
+	
+	public GridController getBaseController()
+	{
+		return baseController;
+	}
 }

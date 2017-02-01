@@ -101,4 +101,9 @@ public class GridPanel extends JPanel
 			}
 		});
 	}
+	
+	public GridController getBaseController()
+	{
+		return baseController;
+	}
 }
