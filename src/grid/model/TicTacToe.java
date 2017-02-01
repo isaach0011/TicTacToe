@@ -7,16 +7,11 @@ public class TicTacToe
 {
 	private GridController baseController;
 	private GridPanel basePanel;
+	private String value;
 	
-	public TicTacToe(GridController baseController)
+	public TicTacToe()
 	{
-		this.baseController = baseController;
-		baseController.getGrid();
-	}
-	
-	public void assignSpace(String xOrO, int row, int col)
-	{
-		baseController.getGrid()[row][col] = xOrO;
+		value = "";
 	}
 	
 	public String toString()

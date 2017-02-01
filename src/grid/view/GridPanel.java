@@ -52,10 +52,6 @@ public class GridPanel extends JPanel
 		setupLayout();
 		setupListeners();
 	}
-	public GridPanel(TicTacToe ticTacToe)
-	{
-		this.ticTacToe = ticTacToe;
-	}
 	
 	public void setupTable()
 	{
@@ -126,7 +122,7 @@ public class GridPanel extends JPanel
 				
 				if(isXOrO(xo) && isValidSpace(rowChoice) && isValidSpace(columnChoice))
 				{
-					ticTacToe.assignSpace(xo, rowChoice, columnChoice);
+					baseController.assignSpace(xo, rowChoice, columnChoice);
 				}
 				
 				tttInput.setText("");
