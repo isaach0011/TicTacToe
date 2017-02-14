@@ -118,16 +118,14 @@ public class GridPanel extends JPanel
 			{
 				String xo = tttInput.getText();
 				int rowChoice = Integer.parseInt(rowInput.getText());
-				int columnChoice = Integer.parseInt(columnInput.getText());
+				int columnChoice = Integer.parseInt(columnInput.getText());	
+				baseController.assignSpace(xo, rowChoice, columnChoice);
 				
-				if(isXOrO(xo) && isValidSpace(rowChoice) && isValidSpace(columnChoice))
-				{
-					baseController.assignSpace(xo, rowChoice, columnChoice);
-				}
 				
 				tttInput.setText("");
 				rowInput.setText("");
 				columnInput.setText("");
+				repaint();
 			}
 		});
 	}
@@ -135,58 +133,5 @@ public class GridPanel extends JPanel
 	public GridController getBaseController()
 	{
 		return baseController;
-	}
-	
-	public boolean isValidInteger(String input)
-	{
-		boolean isValid = false;
-		
-		try
-		{
-			int successful = Integer.parseInt(input);
-			isValid = true;
-		}
-		catch (NumberFormatException userTypedSomething)
-		{
-			JOptionPane.showMessageDialog(this, "Type in a valid int in either row or column.");
-		}
-		
-		return isValid;
-	}
-	
-	public boolean isXOrO(String input)
-	{
-		boolean isValid = false;
-		
-		if (input.equalsIgnoreCase("o") || input.equalsIgnoreCase("x"))
-		{
-			isValid = true;
-		}
-		else
-		{
-			JOptionPane.showMessageDialog(this, "Type in either X or O in the Input.");
-		}
-		
-		return isValid;
-	}
-	
-	public boolean isValidSpace(int input)
-	{
-		boolean isValid = false;
-		
-		if (input == 1 ||
-				input == 2 ||
-				input == 3 ||
-				input == 4 ||
-				input == 5)
-		{
-			isValid = true;
-		}
-		else
-		{
-			JOptionPane.showMessageDialog(this, "Type in a valid space on the table.");
-		}
-		
-		return isValid;
 	}
 }
