@@ -9,14 +9,13 @@ public class GridController
 	private GridFrame gridFrame;
 	private TicTacToe ticTacToe;
 	private TicTacToe [][] grid;
-	private String value;
+	private TicTacToe value;
 	
 	public GridController()
 	{
 		gridFrame = new GridFrame(this);
 		ticTacToe = new TicTacToe();
 		grid = new TicTacToe[5][5];
-		value = "";
 		fillGrid();
 	}
 	
@@ -33,7 +32,6 @@ public class GridController
 	
 	public void assignSpace(String xOrO, int row, int col)
 	{
-		value = xOrO;
 		grid[row][col] = value;
 	}
 	

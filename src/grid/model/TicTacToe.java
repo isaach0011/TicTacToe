@@ -16,6 +16,6 @@ public class TicTacToe
 	
 	public String toString()
 	{
-		return "TicTacToe is fun.";
+		return "TicTacToe is fun." + value;
 	}
 }
